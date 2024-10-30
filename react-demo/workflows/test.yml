@@ -1,0 +1,20 @@
+name: "Test Project"
+
+on:
+    push:
+      branches: [dev]
+      paths: .github/GitOps/workflows/test.yml
+    pull_request:
+      branches: none # [ main ]
+  # Allows to run this workflow manually from the Actions tab
+    workflow_dispatch:
+
+jobs:
+    test:
+        runs-on:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Get Code
+                uses: actions/checkout@v3
+
+                
