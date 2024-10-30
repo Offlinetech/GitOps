@@ -2,14 +2,12 @@ name: Test Project
 
 on:
   push:
-    branches: [dev]
+    branches: [main]
     paths: .github/workflows/react-test.yml
   pull_request:
     branches: none # [ main ]
 # Allows to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-
 
 jobs:
   test:
@@ -17,5 +15,15 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npm test
+          
+
 
 
