@@ -3,7 +3,7 @@ name: Test Project
 on:
     push:
       branches: [dev]
-      paths: .github/workflows/react-test.ym
+      paths: .github/workflows/react-test.yml
     pull_request:
       branches: [ main ]
   # Allows to run this workflow manually from the Actions tab
